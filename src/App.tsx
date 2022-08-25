@@ -1,10 +1,20 @@
 import { useRoutes, type RouteObject } from 'react-router-dom'
-import { Overview } from './containers'
+import { HeroPage, Overview } from './containers'
 function App() {
   const routes: RouteObject[] = [
     {
       path: '/',
       element: <Overview />,
+    },
+    {
+      path: 'hero',
+      element: <HeroPage />,
+      children: [
+        {
+          path: '/hero/:name',
+          element: <HeroPage />,
+        },
+      ],
     },
   ]
 

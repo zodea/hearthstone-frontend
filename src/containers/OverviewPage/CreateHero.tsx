@@ -48,9 +48,8 @@ export default function CreateHero() {
   const [heroResult, createHero] = useMutation(CreateHeroMutation)
 
   const submitHero = async (createHeroInput: HeroInputs) => {
-    const result = await createHero({ createHeroInput })
+    await createHero({ createHeroInput })
     setOpen(true)
-    console.log(result)
   }
   const onSubmit: SubmitHandler<HeroInputs> = (data) => submitHero(data)
   return (
